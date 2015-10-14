@@ -46,7 +46,7 @@ def family_default_gadgets(family='wikipedia'):
 |}
 """%( family, '\n|-\n'.join(map(lambda x:x[0], output)))
 	print(output)
-	meta_wiki = pywikibot.getSite('en', 'meta')
+	meta_wiki = pywikibot.getSite('meta', 'meta')
 	meta_page = pywikibot.Page(meta_wiki, 'Gadgets/%s/default'%(family))
 	meta_page.put(output, 'Default gadgets in %s'%family)
 
