@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # (C) eranroz
 #
-# Distributed under the terms of the MIT license.! /usr/bin/env python
+# Distributed under the terms of the MIT license.
 
 import datetime
 import MySQLdb

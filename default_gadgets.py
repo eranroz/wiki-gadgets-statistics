@@ -14,13 +14,6 @@ def extract_defaults(wikitext):
 	match_lines = [default_re.match(line) for line in wikitext.split('\n')]
 	return [m.group(1) for m in match_lines if m]
 
-def getGadgets():
-	families = ['wikipedia']
-	site = pywikibot.getSite('en', 'wikipedia')
-	gadgets_def = pywikibot.Page(site,'MediaWiki:Gadgets-definition')
-	wikitext = gadgets_def.get()
-	print(extract_defaults(wikitext))
-
 def family_default_gadgets(family='wikipedia'):
 	site = pywikibot.getSite('en', family)
 	family_sites = [pywikibot.getSite(lang, family) for lang in site.languages()]
