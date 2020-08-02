@@ -88,7 +88,7 @@ for family, gadgets in familyGadgets.iteritems():
     gadgetsDetails = [(gadgetName,', '.join([u'%s (%s)'%(link,str(count)) for link, count in langData]), sum([count for link,count in langData])) for gadgetName, langData in gadgets.iteritems()]
     gadgetsDetails.sort(key=lambda x:x[2], reverse=True)
 	
-    gadgetsInfo = [u'| [[Gadgets/%s]] || %s || %i'%(gadgetName, langData, totalCount) for gadgetName, langData, totalCount in gadgetsDetails]
+    gadgetsInfo = [u'| %s || %s || %i'%(gadgetName, langData, totalCount) for gadgetName, langData, totalCount in gadgetsDetails]
     family_report = report_family_template % (family, datetime.datetime.now().strftime('%B %Y'), '\n|-\n'.join(gadgetsInfo))
     meta_wiki = pywikibot.getSite('meta', 'meta')
     meta_page = pywikibot.Page(meta_wiki, 'Gadgets/%s'%(family))

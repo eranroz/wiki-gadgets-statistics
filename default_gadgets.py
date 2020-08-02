@@ -36,7 +36,7 @@ def family_default_gadgets(family='wikipedia'):
 					gadgets_dict[gadget].append( gadget_item )
 		except NoPage:
 			continue
-	output = [('| [[Gadgets/%s|%s]] || %s || %i'%(k, k, ', '.join(v), len(v)), len(v)) for k,v in gadgets_dict.items()]
+	output = [('| %s || %s || %i'%(k, ', '.join(v), len(v)), len(v)) for k,v in gadgets_dict.items()]
 	output.sort(key=lambda x:-x[1])  # sort by popularity
 	output = """Default gadgets in project %s.
 {| class="wikitable sortable plainlinks"
